@@ -17,5 +17,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/compressed-video', 'VideoController@compressVideo')->name('compressed-video');
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/courses', function () {
+    return view('courses');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+
 
