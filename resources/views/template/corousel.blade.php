@@ -43,31 +43,18 @@
         }
     }
     /* Custom keyframes for slide animations */
-    @keyframes slideInLeft {
+    @keyframes slideInDown {
         from {
             opacity: 0;
-            transform: translateX(-100%);
+            transform: translateY(-100%);
         }
         to {
             opacity: 1;
-            transform: translateX(0);
+            transform: translateY(0);
         }
     }
-    @keyframes slideInRight {
-        from {
-            opacity: 0;
-            transform: translateX(100%);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-    .slide-1-animation {
-        animation: slideInLeft 1.5s;
-    }
-    .slide-2-animation {
-        animation: slideInRight 1.5s;
+    .slide-animation-down {
+        animation: slideInDown 1.5s;
     }
 </style>
 
@@ -81,7 +68,7 @@
                     <div class="row justify-content-start">
                         <div class="col-sm-10 col-lg-8">
                             <h5 class="text-gold text-uppercase mb-3 text-maroon custom-font">Queen International Bali</h5>
-                            <h1 class="display-3 text-white custom-font">Premier Hospitality and Cruise Ship Management Education</h1>
+                            <h1 class="display-3 text-white custom-font h1-slide">Premier Hospitality and Cruise Ship Management Education</h1>
                             <p class="fs-5 text-white mb-4 pb-2">Located in the heart of Denpasar, Queen International Bali offers top-notch programs in hospitality and cruise ship management. With state-of-the-art facilities and a dedicated faculty, we prepare our students for global careers in the hospitality industry.</p>
                         </div>
                     </div>
@@ -95,7 +82,7 @@
                     <div class="row justify-content-start">
                         <div class="col-sm-10 col-lg-8">
                             <h5 class="text-gold text-uppercase mb-3 text-maroon custom-font">Queen International Bali</h5>
-                            <h1 class="display-3 text-white custom-font">TWO WAYS LEARNING EDUCATION</h1>
+                            <h1 class="display-3 text-white custom-font h1-slide">TWO WAYS LEARNING EDUCATION</h1>
                             <p class="fs-5 text-white mb-4 pb-2">Queen international menjabarkan to do, to be, to tell dalam proses perkuliahan dan pendidikannnya karena semua dosennya menjadi panutan yang hebat (Role Model) sehingga perkuliahan 2 arah atau 2 way direction memberikan ruang dan kesempatan nyata buat student untuk berani tampil percaya diri, kreatif dan inovatif menyampaikan ide-ide dan gagasannya sebagai satu langkah awal yang hebat untuk mempersiapkan hari esok yang lebih cerah dan gemilang.</p>
                         </div>
                     </div>
@@ -123,16 +110,12 @@
             animateOut: 'fadeOut',
             animateIn: 'fadeIn',
             onTranslate: function(event) {
-                $('.slide-1 h5, .slide-1 h1, .slide-1 p').removeClass('slide-1-animation');
-                $('.slide-2 h5, .slide-2 h1, .slide-2 p').removeClass('slide-2-animation');
+                // Remove animation classes
+                $('.h1-slide').removeClass('slide-animation-down');
             },
             onTranslated: function(event) {
-                var item = event.item.index;
-                if ($(event.target).find(".owl-item").eq(item).find(".slide-1").length) {
-                    $('.slide-1 h5, .slide-1 h1, .slide-1 p').addClass('slide-1-animation');
-                } else if ($(event.target).find(".owl-item").eq(item).find(".slide-2").length) {
-                    $('.slide-2 h5, .slide-2 h1, .slide-2 p').addClass('slide-2-animation');
-                }
+                // Add animation class to active slide
+                $('.h1-slide').addClass('slide-animation-down');
             }
         });
     });

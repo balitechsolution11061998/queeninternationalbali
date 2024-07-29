@@ -371,16 +371,16 @@
                             <img class="img-fluid bg-light p-1" src="{{ asset('jurusan/IMG-20240320-WA0034.jpg') }}" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/course-3.jpg" alt="">
+                            <img class="img-fluid bg-light p-1" src="{{ asset('jurusan/R6II6888.jpg') }}" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/course-2.jpg" alt="">
+                            <img class="img-fluid bg-light p-1" src="{{ asset('jurusan/IMG_1764.jpg') }}" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/course-3.jpg" alt="">
+                            <img class="img-fluid bg-light p-1" src="{{ asset('jurusan/IMG_1908.jpg') }}" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/course-1.jpg" alt="">
+                            <img class="img-fluid bg-light p-1" src="{{ asset('jurusan/IMG_1808.jpg') }}" alt="">
                         </div>
                     </div>
                 </div>
