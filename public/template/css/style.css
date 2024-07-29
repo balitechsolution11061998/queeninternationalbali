@@ -564,3 +564,11 @@
     height: 100%;
     object-fit: cover;
 }
+.text-maroon {
+    color: gold;
+}
+.custom-font {
+    font-family: 'Arial', sans-serif; /* Customize the font as needed */
+    font-weight: bold;
+}
+

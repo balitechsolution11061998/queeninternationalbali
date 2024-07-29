@@ -21,6 +21,7 @@
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <!-- Libraries Stylesheet -->
     <link href="{{ asset('template/lib/animate/animate.min.css') }}" rel="stylesheet">
@@ -432,6 +433,7 @@
 
     <!-- Template Javascript -->
     <script src="{{ asset('template/js/main.js') }}"></script>
+
     <script>
    document.addEventListener('DOMContentLoaded', function() {
     const toggleButtons = document.querySelectorAll('.toggle-description-btn');
@@ -453,6 +455,8 @@
             }
         });
     });
+
+
 });
 
 
