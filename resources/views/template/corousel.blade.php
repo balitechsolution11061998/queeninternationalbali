@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
 
 <style>
-    /* Base Styles */
+/* Base Styles */
 .header-carousel h1,
 .header-carousel h5,
 .header-carousel p,
@@ -91,18 +91,23 @@
 /* Style for carousel items */
 .header-carousel .owl-carousel-item {
     position: relative;
+    width: 100%;
+    height: 500px; /* Set height to 500px */
 }
 
 .header-carousel .owl-carousel-item img {
     width: 100%;
-    height: auto;
-    object-fit: cover;
+    height: 100%; /* Full height to cover the area */
+    object-fit: cover; /* Ensure the image covers the area */
 }
 
 /* Position and overlay styling */
 .header-carousel .position-absolute {
     background: linear-gradient(180deg, rgba(24, 29, 56, 0.5) 0%, rgba(24, 29, 56, 0.7) 100%);
     padding: 50px 20px;
+    height: 100%; /* Full height to cover the entire carousel item */
+    display: flex;
+    align-items: center; /* Center content vertically */
 }
 
 /* Text color */
@@ -111,12 +116,14 @@
 .header-carousel p,
 .header-carousel small {
     color: #ffffff; /* White text color */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Ensure text is readable on images */
 }
 
 .carousel-control-icon {
     font-size: 2rem;
     color: #ffffff; /* White icon color */
 }
+
 </style>
 
 <!-- Carousel Start -->
