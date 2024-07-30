@@ -571,4 +571,16 @@
     font-family: 'Arial', sans-serif; /* Customize the font as needed */
     font-weight: bold;
 }
+.text-gold {
+    color: #FFD700; /* Gold color */
+}
 
+.btn-gold {
+    background-color: #FFD700; /* Gold color */
+    border-color: #FFD700; /* Gold color border */
+}
+
+.btn-gold:hover {
+    background-color: #FFC107; /* Slightly darker gold on hover */
+    border-color: #FFC107; /* Slightly darker gold border on hover */
+}
