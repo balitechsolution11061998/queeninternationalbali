@@ -45,6 +45,7 @@
 .modal-content {
     border-radius: 10px;
     overflow: hidden;
+    position: relative;
 }
 
 .modal-body {
@@ -68,6 +69,22 @@
 
 #loading {
     text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.arrow-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 
@@ -122,6 +139,8 @@
 </div>
 <!-- Categories End -->
 <!-- Modal Structure -->
+<!-- Modal Structure -->
+<!-- Modal Structure -->
 <div class="modal fade" id="courseModal" tabindex="-1" aria-labelledby="courseModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -130,69 +149,91 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div id="modalContent" class="text-center">
-                    <!-- Dynamic content will be loaded here -->
-                    <div id="loading" class="text-center">
-                        <div class="spinner-border text-primary" role="status">
-                            <span class="visually-hidden">Loading...</span>
-                        </div>
-                    </div>
-                    <div id="courseDetails" style="display: none;">
-                        <!-- Detailed content will be injected here -->
+                <div id="loading" class="text-center">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
                     </div>
                 </div>
+                <div id="courseDetails" style="display: none;">
+                    <img src="" alt="Course Image" id="courseImage">
+                    <h3 id="courseTitle"></h3>
+                    <p id="courseDescription"></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="arrow-controls">
+                    <button type="button" class="btn btn-secondary" id="prevCourse">← Previous</button>
+                    <button type="button" class="btn btn-secondary" id="nextCourse">Next →</button>
+                </div>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </div>
+
 <!-- JavaScript to handle modal content -->
 <script>
-    $(document).ready(function() {
-        // Define course descriptions and images
-        var courseDetails = {
-            'F&B PRODUCT': {
-                description: 'The F&B Product department is in charge of the preparation and presentation of food and beverages. This includes creating menus, cooking meals, ensuring food quality, and maintaining kitchen hygiene. The staff in this department work closely with chefs and kitchen staff to deliver high-quality culinary experiences.',
-                image: '{{ asset('jurusan/F& PRODUCT.jpg') }}'
-            },
-            'F&B SERVICE': {
-                description: 'The F&B Service department focuses on serving food and beverages to guests in a hotel or restaurant setting. This includes taking orders, serving meals and drinks, and ensuring customer satisfaction. Staff in this department must have excellent communication skills and a keen attention to detail to provide outstanding service.',
-                image: '{{ asset('jurusan/F7B SERVICE.jpg') }}'
-            },
-            'FRONT OFFICE': {
-                description: 'The Front Office department is responsible for managing guest interactions from check-in to check-out. This includes handling reservations, providing information about the hotel and its services, and addressing any guest inquiries or issues. It serves as the primary point of contact between the guests and the hotel.',
-                image: '{{ asset('jurusan/FRONT OFFICE.jpg') }}'
-            },
-            'HOUSE KEEPING': {
-                description: 'The Housekeeping department is responsible for maintaining cleanliness and orderliness within the hotel. This includes cleaning guest rooms, public areas, and back-of-house areas, as well as handling laundry and managing linen supplies. Housekeeping ensures that all areas of the hotel meet the highest standards of cleanliness and comfort for guests.',
-                image: '{{ asset('jurusan/HOUSEKEEPING.jpg') }}'
-            }
-        };
+$(document).ready(function() {
+    // Define course descriptions and images
+    var courseDescriptions = {
+        'F&B PRODUCT': {
+            description: 'The F&B Product department is in charge of the preparation and presentation of food and beverages. This includes creating menus, cooking meals, ensuring food quality, and maintaining kitchen hygiene. The staff in this department work closely with chefs and kitchen staff to deliver high-quality culinary experiences.',
+            image: '{{ asset('jurusan/F& PRODUCT.jpg') }}'
+        },
+        'F&B SERVICE': {
+            description: 'The F&B Service department focuses on serving food and beverages to guests in a hotel or restaurant setting. This includes taking orders, serving meals and drinks, and ensuring customer satisfaction. Staff in this department must have excellent communication skills and a keen attention to detail to provide outstanding service.',
+            image: '{{ asset('jurusan/F7B SERVICE.jpg') }}'
+        },
+        'FRONT OFFICE': {
+            description: 'The Front Office department is responsible for managing guest interactions from check-in to check-out. This includes handling reservations, providing information about the hotel and its services, and addressing any guest inquiries or issues. It serves as the primary point of contact between the guests and the hotel.',
+            image: '{{ asset('jurusan/FRONT OFFICE.jpg') }}'
+        },
+        'HOUSE KEEPING': {
+            description: 'The Housekeeping department is responsible for maintaining cleanliness and orderliness within the hotel. This includes cleaning guest rooms, public areas, and back-of-house areas, as well as handling laundry and managing linen supplies. Housekeeping ensures that all areas of the hotel meet the highest standards of cleanliness and comfort for guests.',
+            image: '{{ asset('jurusan/HOUSEKEEPING.jpg') }}'
+        }
+    };
 
-        $('.course-link').click(function(e) {
-            e.preventDefault();
-            var courseName = $(this).data('course'); // Get course name from data attribute
-            console.log(courseName);
+    var courseList = Object.keys(courseDescriptions);
+    var currentIndex = 0;
 
-            // Show loading spinner
-            $('#loading').show();
-            $('#courseDetails').hide();
+    function updateModal(courseName) {
+        $('#loading').show();
+        $('#courseDetails').hide();
 
-            // Simulate loading delay (remove setTimeout in production)
-            setTimeout(function() {
-                // Populate modal with course details
-                var details = courseDetails[courseName] || {};
-                var content = '<img src="' + (details.image || '') + '" alt="' + courseName + '" class="img-fluid mb-3">' +
-                              '<h3>' + courseName + '</h3>' +
-                              '<p>' + (details.description || 'Description not available.') + '</p>';
-                $('#courseDetails').html(content);
-                $('#loading').hide();
-                $('#courseDetails').show();
-            }, 500); // Adjust delay as needed
+        // Populate modal with course details
+        var course = courseDescriptions[courseName];
+        $('#courseTitle').text(courseName);
+        $('#courseDescription').text(course.description);
+        $('#courseImage').attr('src', course.image);
 
-            // Show the modal
-            $('#courseModal').modal('show');
-        });
+        // Simulate loading delay (remove setTimeout in production)
+        setTimeout(function() {
+            $('#loading').hide();
+            $('#courseDetails').show();
+        }, 500); // Adjust delay as needed
+    }
+
+    $('.course-link').click(function(e) {
+        e.preventDefault();
+        var courseName = $(this).data('course');
+        currentIndex = courseList.indexOf(courseName); // Update currentIndex
+        updateModal(courseName);
+        $('#courseModal').modal('show');
     });
-</script>
 
+    $('#prevCourse').click(function() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateModal(courseList[currentIndex]);
+        }
+    });
+
+    $('#nextCourse').click(function() {
+        if (currentIndex < courseList.length - 1) {
+            currentIndex++;
+            updateModal(courseList[currentIndex]);
+        }
+    });
+});
 </script>
