@@ -578,9 +578,12 @@
 .btn-gold {
     background-color: #781515; /* Gold color */
     border-color: #781515; /* Gold color border */
+    color:white;
 }
 
 .btn-gold:hover {
     background-color: #781515; /* Slightly darker gold on hover */
     border-color: #781515; /* Slightly darker gold border on hover */
+    color:white;
+
 }
