@@ -43,7 +43,6 @@
 .position-relative {
     position: relative;
     width: 100%;
-    height: auto; /* Adjust if needed */
 }
 
 .img-fluid {
