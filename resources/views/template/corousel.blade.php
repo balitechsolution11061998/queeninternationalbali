@@ -4,58 +4,119 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
 
 <style>
-    .header-carousel .owl-carousel-item {
-        position: relative;
+    /* Base Styles */
+.header-carousel h1,
+.header-carousel h5,
+.header-carousel p,
+.header-carousel small {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Ensure text is readable on images */
+}
+
+.header-carousel .custom-font {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header-carousel .animate__animated {
+    animation-duration: 1.5s;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .header-carousel h1 {
+        font-size: 4rem; /* Adjust as needed */
     }
-    .header-carousel .owl-carousel-item img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
+    .header-carousel h5 {
+        font-size: 1.5rem; /* Adjust as needed */
     }
-    .header-carousel .position-absolute {
-        background: linear-gradient(180deg, rgba(24, 29, 56, .7) 0%, rgba(24, 29, 56, .7) 100%);
-        padding: 50px 20px;
+    .header-carousel p {
+        font-size: 1.2rem; /* Adjust as needed */
     }
-    .header-carousel .text-gold {
-        color: #FFD700;
+    .header-carousel small {
+        font-size: 1rem; /* Adjust as needed */
     }
-    .header-carousel h1, .header-carousel h5, .header-carousel p {
-        text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 992px) {
+    .header-carousel h1 {
+        font-size: 3rem; /* Adjust as needed */
     }
-    .header-carousel .custom-font {
-        font-family: 'Montserrat', sans-serif;
+    .header-carousel h5 {
+        font-size: 1.25rem; /* Adjust as needed */
     }
-    .header-carousel .animate__animated {
-        animation-duration: 1.5s;
+    .header-carousel p {
+        font-size: 1rem; /* Adjust as needed */
     }
-    @media (max-width: 768px) {
-        .header-carousel .position-absolute {
-            padding: 30px 10px;
-        }
-        .header-carousel h1 {
-            font-size: 2rem;
-        }
-        .header-carousel h5 {
-            font-size: 1rem;
-        }
-        .header-carousel p {
-            font-size: 0.9rem;
-        }
+    .header-carousel small {
+        font-size: 0.9rem; /* Adjust as needed */
     }
-    /* Custom keyframes for slide animations */
-    @keyframes slideInDown {
-        from {
-            opacity: 0;
-            transform: translateY(-100%);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+}
+
+@media (max-width: 768px) {
+    .header-carousel h1 {
+        font-size: 2.5rem; /* Adjust as needed for mobile devices */
     }
-    .slide-animation-down {
-        animation: slideInDown 1.5s;
+    .header-carousel h5 {
+        font-size: 1rem; /* Adjust as needed for mobile devices */
     }
+    .header-carousel p {
+        font-size: 0.9rem; /* Adjust as needed for mobile devices */
+    }
+    .header-carousel small {
+        font-size: 0.8rem; /* Adjust as needed for mobile devices */
+    }
+}
+
+@media (max-width: 576px) {
+    .header-carousel h1 {
+        font-size: 2rem; /* Smaller font size for mobile devices */
+    }
+    .header-carousel h5 {
+        font-size: 0.9rem; /* Smaller font size for mobile devices */
+    }
+    .header-carousel p {
+        font-size: 0.8rem; /* Smaller font size for mobile devices */
+    }
+    .header-carousel small {
+        font-size: 0.7rem; /* Smaller font size for mobile devices */
+    }
+}
+
+/* Hide icon on mobile screens */
+@media (max-width: 768px) {
+    .carousel-control-icon {
+        display: none;
+    }
+}
+
+/* Style for carousel items */
+.header-carousel .owl-carousel-item {
+    position: relative;
+}
+
+.header-carousel .owl-carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Position and overlay styling */
+.header-carousel .position-absolute {
+    background: linear-gradient(180deg, rgba(24, 29, 56, 0.5) 0%, rgba(24, 29, 56, 0.7) 100%);
+    padding: 50px 20px;
+}
+
+/* Text color */
+.header-carousel h1,
+.header-carousel h5,
+.header-carousel p,
+.header-carousel small {
+    color: #ffffff; /* White text color */
+}
+
+.carousel-control-icon {
+    font-size: 2rem;
+    color: #ffffff; /* White icon color */
+}
 </style>
 
 <!-- Carousel Start -->
@@ -69,7 +130,7 @@
                         <div class="col-sm-10 col-lg-8">
                             <h5 class="text-gold text-uppercase mb-3 text-maroon custom-font">Queen International Bali</h5>
                             <h1 class="display-3 text-white custom-font h1-slide">Premier Hospitality and Cruise Ship Management Education</h1>
-                            <p class="fs-5 text-white mb-4 pb-2">Located in the heart of Denpasar, Queen International Bali offers top-notch programs in hospitality and cruise ship management. With state-of-the-art facilities and a dedicated faculty, we prepare our students for global careers in the hospitality industry.</p>
+                            <small>Located in the heart of Denpasar, Queen International Bali offers top-notch programs in hospitality and cruise ship management. With state-of-the-art facilities and a dedicated faculty, we prepare our students for global careers in the hospitality industry.</small>
                         </div>
                     </div>
                 </div>
@@ -83,13 +144,16 @@
                         <div class="col-sm-10 col-lg-8">
                             <h5 class="text-gold text-uppercase mb-3 text-maroon custom-font">Queen International Bali</h5>
                             <h1 class="display-3 text-white custom-font h1-slide">TWO WAYS LEARNING EDUCATION</h1>
-                            <p class="fs-5 text-white mb-4 pb-2">Queen international menjabarkan to do, to be, to tell dalam proses perkuliahan dan pendidikannnya karena semua dosennya menjadi panutan yang hebat (Role Model) sehingga perkuliahan 2 arah atau 2 way direction memberikan ruang dan kesempatan nyata buat student untuk berani tampil percaya diri, kreatif dan inovatif menyampaikan ide-ide dan gagasannya sebagai satu langkah awal yang hebat untuk mempersiapkan hari esok yang lebih cerah dan gemilang.</p>
+                            <small style="color:white;font-weight:bold;">Queen international menjabarkan to do, to be, to tell dalam proses perkuliahan dan pendidikannnya karena semua dosennya menjadi panutan yang hebat (Role Model) sehingga perkuliahan 2 arah atau 2 way direction memberikan ruang dan kesempatan nyata buat student untuk berani tampil percaya diri, kreatif dan inovatif menyampaikan ide-ide dan gagasannya sebagai satu langkah awal yang hebat untuk mempersiapkan hari esok yang lebih cerah dan gemilang.</small>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Add more carousel items here as needed -->
+    </div>
+    <div class="carousel-control-icon position-absolute end-0 top-50">
+        <i class="bi bi-chevron-right"></i>
     </div>
 </div>
 <!-- Carousel End -->
