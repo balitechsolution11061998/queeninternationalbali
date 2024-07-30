@@ -57,14 +57,17 @@
 
 #courseDetails {
     text-align: left;
+    width: 100%;
 }
 
 #courseDetails img {
     max-width: 100%;
     max-height: 500px;
+    width: auto;
     height: auto;
     margin-bottom: 15px;
     object-fit: cover;
+    transition: transform 0.3s ease-in-out;
 }
 
 #loading {
@@ -87,7 +90,77 @@
     width: 100%;
 }
 
+/* Smooth transition effect */
+.modal-body .transition-effect {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
 
+.modal-body .transition-effect.show {
+    opacity: 1;
+}
+
+/* Modal content styling */
+.modal-body {
+    position: relative;
+}
+
+.modal-body .content-container {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.modal-body .content-container.show {
+    opacity: 1;
+}
+
+.modal-body .content-container.hide {
+    opacity: 0;
+}
+#courseDetails {
+    text-align: left;
+    width: 100%;
+}
+
+#courseDetails img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    margin-bottom: 15px;
+    border-radius: 10px; /* Optional: to match the styling */
+}
+
+.modal-content {
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+#loading {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#loading .fa-spinner {
+    font-size: 2rem; /* Adjust size as needed */
+    color: #007bff; /* Primary color or adjust as needed */
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.arrow-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
 </style>
 <!-- Categories Start -->
 <div class="container-xxl py-5 category">
@@ -101,7 +174,7 @@
                 <div class="row g-3">
                     <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
                         <a class="position-relative d-block overflow-hidden course-link" href="#" data-course="F&B PRODUCT">
-                            <img class="img-fluid" src="{{ asset('jurusan/F& PRODUCT.jpg') }}" alt="">
+                            <img class="img-fluid" src="{{ asset('jurusan/FPRODUCT.jpg') }}" alt="">
                             <div class="bg-white position-absolute bottom-0 end-0 py-2 px-3">
                                 <h5 class="m-0">F & B PRODUCT</h5>
                             </div>
@@ -137,9 +210,6 @@
         </div>
     </div>
 </div>
-<!-- Categories End -->
-<!-- Modal Structure -->
-<!-- Modal Structure -->
 <!-- Modal Structure -->
 <div class="modal fade" id="courseModal" tabindex="-1" aria-labelledby="courseModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -150,9 +220,7 @@
             </div>
             <div class="modal-body">
                 <div id="loading" class="text-center">
-                    <div class="spinner-border text-primary" role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </div>
+                    <i class="fas fa-spinner fa-spin"></i>
                 </div>
                 <div id="courseDetails" style="display: none;">
                     <img src="" alt="Course Image" id="courseImage">
@@ -171,6 +239,7 @@
     </div>
 </div>
 
+
 <!-- JavaScript to handle modal content -->
 <script>
 $(document).ready(function() {
@@ -178,7 +247,7 @@ $(document).ready(function() {
     var courseDescriptions = {
         'F&B PRODUCT': {
             description: 'The F&B Product department is in charge of the preparation and presentation of food and beverages. This includes creating menus, cooking meals, ensuring food quality, and maintaining kitchen hygiene. The staff in this department work closely with chefs and kitchen staff to deliver high-quality culinary experiences.',
-            image: '{{ asset('jurusan/F& PRODUCT.jpg') }}'
+            image: '{{ asset('jurusan/FPRODUCT.jpg') }}'
         },
         'F&B SERVICE': {
             description: 'The F&B Service department focuses on serving food and beverages to guests in a hotel or restaurant setting. This includes taking orders, serving meals and drinks, and ensuring customer satisfaction. Staff in this department must have excellent communication skills and a keen attention to detail to provide outstanding service.',
@@ -214,6 +283,15 @@ $(document).ready(function() {
         }, 500); // Adjust delay as needed
     }
 
+    function transitionContent() {
+        var $content = $('#courseDetails');
+        $content.fadeOut(300, function() {
+            var courseName = courseList[currentIndex];
+            updateModal(courseName);
+            $content.fadeIn(300);
+        });
+    }
+
     $('.course-link').click(function(e) {
         e.preventDefault();
         var courseName = $(this).data('course');
@@ -225,15 +303,17 @@ $(document).ready(function() {
     $('#prevCourse').click(function() {
         if (currentIndex > 0) {
             currentIndex--;
-            updateModal(courseList[currentIndex]);
+            transitionContent();
         }
     });
 
     $('#nextCourse').click(function() {
         if (currentIndex < courseList.length - 1) {
             currentIndex++;
-            updateModal(courseList[currentIndex]);
+            transitionContent();
         }
     });
 });
+
+
 </script>
