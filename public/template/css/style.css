@@ -565,22 +565,22 @@
     object-fit: cover;
 }
 .text-maroon {
-    color: gold;
+    color: #7c1425;
 }
 .custom-font {
     font-family: 'Arial', sans-serif; /* Customize the font as needed */
     font-weight: bold;
 }
 .text-gold {
-    color: #FFD700; /* Gold color */
+    color: #7c1425; /* Gold color */
 }
 
 .btn-gold {
-    background-color: #FFD700; /* Gold color */
-    border-color: #FFD700; /* Gold color border */
+    background-color: #7c1425; /* Gold color */
+    border-color: #7c1425; /* Gold color border */
 }
 
 .btn-gold:hover {
-    background-color: #FFC107; /* Slightly darker gold on hover */
-    border-color: #FFC107; /* Slightly darker gold border on hover */
+    background-color: #7c1425; /* Slightly darker gold on hover */
+    border-color: #7c1425; /* Slightly darker gold border on hover */
 }
