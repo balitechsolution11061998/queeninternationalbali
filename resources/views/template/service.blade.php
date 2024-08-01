@@ -9,7 +9,7 @@
                     <div class="p-4 flex-grow-1">
                         <i class="fa fa-3x fa-graduation-cap text-gold mb-4"></i>
                         <h5 class="text-gold text-uppercase mb-3 animated slideInDown">Skilled Instructors</h5>
-                        <small class="fs-5 text-dark mb-4 pb-2" id="instructor-description-short">
+                    <small class="fs-5 text-dark mb-4 pb-2" id="instructor-description-short">
                             At Queen International School, our instructors are industry professionals with years of
                             experience in hospitality and cruise ship management.
                         </small>
