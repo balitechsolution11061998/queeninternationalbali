@@ -337,30 +337,31 @@
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Quick Link</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Privacy Policy</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">FAQs & Help</a>
+                    <a class="btn btn-link text-maroon" href="">About Us</a>
+                    <a class="btn btn-link text-maroon" href="">Contact Us</a>
+                    <a class="btn btn-link text-maroon" href="">Privacy Policy</a>
+                    <a class="btn btn-link text-maroon" href="">Terms & Condition</a>
+                    <a class="btn btn-link text-maroon" href="">FAQs & Help</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Contact</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i> <a href="https://maps.app.goo.gl/CV3XdYukxwF9ajGh8?g_st=iw">Jalan Gatot Subroto Timur
-                        No. 10 Denpasar, Bali, Indonesia 80237</a></p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i><a href="https://wa.me/085142910416" target="_blank">
-                        0851-4291-0416
-                    </a></p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i><a href="mailto:queeninternational16@gmail.com">queeninternational16@gmail.com</a>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3 text-golds"></i>
+                       <a class="text-golds" href="https://maps.app.goo.gl/CV3XdYukxwF9ajGh8?g_st=iw">
+                           Jalan Gatot Subroto Timur No. 10 Denpasar, Bali, Indonesia 80237
+                       </a>
                     </p>
-                    {{-- <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i
-                                class="fab fa-linkedin-in"></i></a>
-                    </div> --}}
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3 text-golds"></i>
+                       <a class="text-golds" href="https://wa.me/085142910416" target="_blank">
+                           0851-4291-0416
+                       </a>
+                    </p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3 text-golds"></i>
+                       <a class="text-golds" href="mailto:queeninternational16@gmail.com">
+                           queeninternational16@gmail.com
+                       </a>
+                    </p>
                 </div>
+
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Gallery</h4>
                     <div class="row g-2 pt-2">
@@ -388,10 +389,8 @@
                     <h4 class="text-white mb-3">Newsletter</h4>
                     <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text"
-                            placeholder="Your email">
-                        <button type="button"
-                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-maroon py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                     </div>
                 </div>
             </div>
@@ -400,22 +399,21 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">Bali Tech Solution</a>
-
-
+                        &copy; <a class="border-bottom text-maroon" href="#">Bali Tech Solution</a>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <div class="footer-menu">
-                            <a href="">Home</a>
-                            <a href="">Cookies</a>
-                            <a href="">Help</a>
-                            <a href="">FQAs</a>
+                            <a class="text-maroon" href="">Home</a>
+                            <a class="text-maroon" href="">Cookies</a>
+                            <a class="text-maroon" href="">Help</a>
+                            <a class="text-maroon" href="">FQAs</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <!-- Footer End -->
 
 

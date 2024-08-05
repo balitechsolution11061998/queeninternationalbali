@@ -26,7 +26,7 @@
 <div class="container-xxl py-5">
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="section-title bg-white text-center text-primary px-3">Contact Us</h6>
+            <h6 class="section-title bg-white text-center text-gold px-3">Contact Us</h6>
             <h1 class="mb-5">Contact For Any Query</h1>
         </div>
         <div class="row g-4">
@@ -37,24 +37,24 @@
                         <li class="contact-item">
                             <h6>Phone Number</h6>
                             <span>
-                                <a href="https://wa.me/085142910416" target="_blank">
+                                <a href="https://wa.me/085142910416" target="_blank" class="text-golds">
                                     0851-4291-0416
                                 </a>
                             </span>
                         </li>
                         <li class="contact-item">
                             <h6>Email Address</h6>
-                            <a href="mailto:queeninternational16@gmail.com">queeninternational16@gmail.com</a>
+                            <a href="mailto:queeninternational16@gmail.com" class="text-golds">queeninternational16@gmail.com</a>
                         </li>
                         <li class="contact-item">
                             <h6>Street Address</h6>
-                            <a href="https://maps.app.goo.gl/CV3XdYukxwF9ajGh8?g_st=iw">Jalan Gatot Subroto Timur
+                            <a href="https://maps.app.goo.gl/CV3XdYukxwF9ajGh8?g_st=iw" class="text-golds">Jalan Gatot Subroto Timur
                                 No. 10 Denpasar, Bali, Indonesia 80237</a>
                         </li>
                         <li class="contact-item">
                             <h6>Website URL</h6>
                             <a href="https://queeninternationalbali.com/"
-                                class="d-block">https://queeninternationalbali.com/</a>
+                                class="d-block text-golds">https://queeninternationalbali.com/</a>
                         </li>
                     </ul>
                 </div>
@@ -98,7 +98,7 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                            <button class="btn btn-primary w-100 py-3 btn-gold" type="submit">Send Message</button>
                         </div>
                     </div>
                 </form>

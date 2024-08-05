@@ -587,3 +587,13 @@
     color:white;
 
 }
+.text-maroon {
+    color: #781515;
+}
+.text-golds {
+    color: #FFD700; /* Hex code for gold */
+}
+
+.text-golds:hover {
+    color: #FFC107; /* Slightly lighter shade of gold for hover effect */
+}
